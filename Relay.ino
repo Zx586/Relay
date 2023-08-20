@@ -10,7 +10,7 @@ byte rst = 9;
 const int buzer=5;
 const int kontak=3;
 const int starter=4;
-const int lampu=2;
+const int led=2;
 
 void setup() {
 Serial.begin(9600);
@@ -18,7 +18,7 @@ rfidBegin();
 pinMode(buzer,OUTPUT);
 pinMode(starter,OUTPUT);
 pinMode(kontak,OUTPUT);
-pinMode(lampu,OUTPUT);
+pinMode(led,OUTPUT);
 digitalWrite(starter, LOW);
 digitalWrite(kontak, LOW);
 }
@@ -29,7 +29,7 @@ if(TAG!="") {
   digitalWrite(buzer, HIGH);
   delay(100);
   digitalWrite(buzer, LOW);
-  digitalWrite(lampu, HIGH);
+  digitalWrite(led, LOW);
         
   if(digitalRead(kontak)==LOW) 
   { digitalWrite(kontak,HIGH);
